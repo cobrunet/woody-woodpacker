@@ -36,6 +36,7 @@ int		main(int ac, char **av)
 	{
 		if (!(ptr = get_ptr(av[i], &st_size)))
 			return (exit_failure(av[i]));
+		print_header(ptr);
 		if (munmap(ptr, st_size) < 0)
 			return (exit_failure(""));
 	}

@@ -5,7 +5,7 @@ NAME = woody
 CC = gcc
 
 SRC_PATH = ./src/
-SRC_NAME = woody.c
+SRC_NAME = woody.c handle.c
 
 OBJ_PATH = ./obj/
 OBJ_NAME = $(SRC_NAME:.c=.o)

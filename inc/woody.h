@@ -10,5 +10,6 @@
 
 void	*get_ptr(char *file, off_t *st_size);
 int		exit_failure(char *err_message);
+void	print_header(void *ptr);
 
 #endif

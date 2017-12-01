@@ -41,7 +41,6 @@ void	print_header(void *ptr)
 			printf("p_memsz : %lu\n", phdr->p_memsz);
 			printf("p_align : %lu\n", phdr->p_align);
 		}
-		//phdr = phdr + phdr->p_filesz;
 		phdr = phdr + sizeof(Elf64_Phdr);
 	}
 
@@ -64,5 +63,6 @@ void	print_header(void *ptr)
 			printf("sh_addralign: %lu\n", shdr->sh_addralign);
 			printf("sh_entsize  : %lu\n", shdr->sh_entsize);
 		}
+		shdr = shdr + sizeof(Elf64_Shdr);
 	}
 }

@@ -23,9 +23,9 @@ void	print_header(void *ptr)
 	printf("e_shstrndx : %hu\n", ehdr->e_shstrndx);
 
 	i = 0;
+	phdr = ptr + sizeof(Elf64_Ehdr);
 	while (++i <= ehdr->e_phnum)
 	{
-		phdr = ptr + sizeof(Elf64_Ehdr);
 		printf("\nProgram header\n");
 		printf("p_type  : %u\n", phdr->p_type);
 		printf("p_offset: %lu\n", phdr->p_offset);

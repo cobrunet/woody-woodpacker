@@ -1,15 +1,18 @@
-- Ouvrir nouveau fichier
-- Modifier elf header (e_entry a voir plus tard, e_phnum + 1)
-- Copier ELF header
-- Copier tous les program header
-- Creer notre program header
-- Copier notre programme header
-- Cibler le code existant
-- Chiffrer le code existant
-- Copier le code
-- Creer notre code d'execution et de dechiffrement
-- Copier notre code
-- Victoire
+DONE - Ouvrir nouveau fichier
+WAIT - Modifier elf header (e_entry a voir plus tard, e_phnum + 1)
+DONE - Copier ELF header
+DONE - Copier tous les program header
+WAIT - Creer notre program header (utile ?)
+WAIT - Copier notre programme header (utile?)
+     - Copier les section header et segments jusqu'a la section addr 0
+     - Creer une section header avec un segment pour print un test
+     - Copier le reste des sections / segments
+     - Cibler le code existant
+     - Chiffrer le code existant
+     - Copier le code
+     - Creer notre code d'execution et de dechiffrement
+     - Copier notre code
+     - Victoire
 
 TO DO READ
 http://refspecs.linuxbase.org/elf/gabi4+/ch4.intro.html

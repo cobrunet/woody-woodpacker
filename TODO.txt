@@ -14,4 +14,4 @@
 TO DO READ
 http://refspecs.linuxbase.org/elf/gabi4+/ch4.intro.html
 http://aassfxxx.infos.st/article23/making-elf-packer-for-fun-and-chocapicz
-
+https://www.uclibc.org/docs/elf-64-gen.pdf

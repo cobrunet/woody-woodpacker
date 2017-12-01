@@ -16,7 +16,7 @@ void	*get_ptr(char *file, off_t *st_size)
 		return (NULL);
 	if (fstat(fd, &buf) < 0)
 		return (NULL);
-	if ((ptr = mmap(0, buf.st_size, PROT_READ, MAP_PRIVATE,
+	if ((ptr = mmap(0, buf.st_size, PROT_READ | PROT_WRITE, MAP_PRIVATE,
 		fd, 0)) == MAP_FAILED)
 		return (NULL);
 	*st_size = buf.st_size;
@@ -37,6 +37,8 @@ int		main(int ac, char **av)
 		if (!(ptr = get_ptr(av[i], &st_size)))
 			return (exit_failure(av[i]));
 		print_header(ptr);
+//		if (write_woody(ptr) < 0)
+//			return (exit_failure(""));
 		if (munmap(ptr, st_size) < 0)
 			return (exit_failure(""));
 	}

@@ -1,11 +1,11 @@
 .PHONY: all clean fclean re
 
-NAME = woody
+NAME = woody_woodpacker
 
 CC = gcc
 
 SRC_PATH = ./src/
-SRC_NAME = woody.c handle.c
+SRC_NAME = woody.c handle.c write_woody.c
 
 OBJ_PATH = ./obj/
 OBJ_NAME = $(SRC_NAME:.c=.o)
@@ -16,7 +16,7 @@ SRC = $(addprefix $(SRC_PATH), $(SRC_NAME))
 OBJ = $(addprefix $(OBJ_PATH), $(OBJ_NAME))
 INC = $(addprefix -I, $(INC_PATH))
 
-CFLAGS = -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror -g
 
 all: $(NAME)
 
@@ -32,11 +32,11 @@ $(NAME): $(OBJ)
 	@echo "[\033[36m-------------------------------------\033[0m]"
 
 clean:
-	@rm -rf $(OBJ_PATH)
+	@rm -rf $(OBJ_PATH) woody
 	@echo "[\033[31mSuppression des .o\033[0m]"
 
 fclean: clean
 	@rm -f $(NAME)
 	@echo "[\033[31mSuppression de \033[36m$(NAME)\033[0m\033[0m]"
 
-re: fclean clean
+re: fclean clean all
